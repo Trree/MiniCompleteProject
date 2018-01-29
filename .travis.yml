@@ -1,9 +1,14 @@
 language: cpp
 compiler:
   - gcc
-before_install: 
-  - sudo apt-get install cmake
 
-install:
-  - cmake .
+script:
+  - date
 
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake-data
+      - cmake
