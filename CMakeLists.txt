@@ -18,8 +18,10 @@ add_subdirectory(test)
 #message(STATUS "OpenSSL include directory: " ${OPENSSL_INCLUDE_DIR})
 #message(STATUS "OpenSSL library: " ${OPENSSL_LIBRARIES})
 #include_directories(${OPENSSL_INCLUDE_DIR})
+
 include(cmake/clang-cxx-dev-tools.cmake)
 include(cmake/gcc-weverything.cmake)
+
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
 
