@@ -3,7 +3,7 @@ compiler:
   - gcc
 
 script:
-  - date
+  - cmake . 
 
 addons:
   apt:
