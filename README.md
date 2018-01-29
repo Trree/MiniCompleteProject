@@ -2,6 +2,8 @@
 
 Provide a minimum project example
 
+[中文说明](doc/description.md)
+
 ## Build Tool(Cmake)
 
 Support cross-platform
