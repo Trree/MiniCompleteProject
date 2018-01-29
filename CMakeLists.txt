@@ -11,6 +11,7 @@ set (Tutorial_VERSION_MINOR 0)
 #"${PROJECT_BINARY_DIR}/share/tcp_server.h"
 #
 #)
+add_subdirectory(test)
 
 #set(OPENSSL_ROOT_DIR /usr/local/ssl)
 #find_package(OpenSSL 1.0 REQUIRED)
