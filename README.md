@@ -1,5 +1,7 @@
 # Minimum Complete Project
 
+[![Build Status](https://travis-ci.org/Trree/MiniCompleteProject.svg?branch=master)](https://travis-ci.org/Trree/MiniCompleteProject)
+
 Provide a minimum project example
 
 [中文说明](doc/description.md)
