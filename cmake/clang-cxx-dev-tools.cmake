@@ -1,3 +1,5 @@
+# ref: http://www.labri.fr/perso/fleury/posts/programming/using-clang-tidy-and-clang-format.html
+
 # Additional targets to perform clang-format/clang-tidy
 # Get all project files
 file(GLOB_RECURSE
