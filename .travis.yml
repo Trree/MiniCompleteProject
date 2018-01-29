@@ -10,7 +10,7 @@ install:
 script: 
   - $CXX --version
   - cmake . 
-  - make clang-format && make clang-tidy && make && ./main
+  - make clang-format && make clang-tidy && make && test/unittest && ./main
 
 addons:
   apt:
