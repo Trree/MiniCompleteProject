@@ -1,7 +1,3 @@
-sudo: required
-dist: trusty
-group: deprecated-2017Q4
-
 language: cpp
 
 compiler:
@@ -15,10 +11,7 @@ before_install:
 
 install:
   # g++4.8.1
-  - if [ "$CXX" = "g++"  ]; then sudo apt-get install -qq g++-4.8; fi
-  - if [ "$CXX" = "g++"  ]; then export CXX="g++-4.8"; fi
-
-
+  - if [ "$CXX" = "g++"  ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 script: 
   - $CXX --version
   - cmake . 
@@ -28,10 +21,14 @@ script:
 addons:
   apt:
     sources:
-      - george-edison55-precise-backports
       - ubuntu-toolchain-r-test
+      - george-edison55-precise-backports
     packages:
       - cmake-data
-      - cmake
+      - cmake 
+      - libyajl-dev
+      - libxml2-dev
       - gcc-4.8
       - g++-4.8
+
+sudo: false
