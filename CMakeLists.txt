@@ -17,7 +17,7 @@ set (Tutorial_VERSION_MINOR 0)
 #message(STATUS "OpenSSL include directory: " ${OPENSSL_INCLUDE_DIR})
 #message(STATUS "OpenSSL library: " ${OPENSSL_LIBRARIES})
 #include_directories(${OPENSSL_INCLUDE_DIR})
-
+include(cmake/clang-cxx-dev-tools.cmake)
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
 ADD_DEFINITIONS(-std=c++11 -g3 -W -Wall -pedantic -D_GNU_SOURCE)

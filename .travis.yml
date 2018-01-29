@@ -2,6 +2,7 @@ language: cpp
 
 compiler:
   - gcc
+  - clang
 
 install:
   # g++4.8.1
@@ -24,5 +25,6 @@ addons:
       - libxml2-dev
       - gcc-4.8
       - g++-4.8
+      - clang
 
 sudo: false
