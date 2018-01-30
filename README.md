@@ -41,13 +41,21 @@ This project support multiple compliers and multiple platform, and support clang
 If you want to use docker, you have to build docker image firstly.
 In the docker directory, we provide two dockerfile,  it is ubuntu-trusty and alpine respectively.
 
-> cd docker/{linux-platform}/
-> sudo docker build -t {mini-complete-linux-platform} .
+```
+cd docker/{linux-platform}
+sudo docker build -t {mini-complete-linux-platform} .
+
+
+```
 
 you also can build  and run it like this:
 
-> sudo docker run -it -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform} ./build.py --docker-name {mini-complete-linux-platform}
-> sudo docker run -it --rm --privileged  -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform}  stage/{mini-complete-linux-platform}/release/main 
+```
+sudo docker run -it -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform} ./build.py --docker-name {mini-complete-linux-platform}
+
+sudo docker run -it --rm --privileged  -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform}  stage/{mini-complete-linux-platform}/release/main 
+
+```
 
 ## Build Env (docker)
 
