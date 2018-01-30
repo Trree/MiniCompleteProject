@@ -44,17 +44,13 @@ In the docker directory, we provide two dockerfile,  it is ubuntu-trusty and alp
 ```
 cd docker/{linux-platform}
 sudo docker build -t {mini-complete-linux-platform} .
-
-
 ```
 
 you also can build  and run it like this:
 
 ```
 sudo docker run -it -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform} ./build.py --docker-name {mini-complete-linux-platform}
-
 sudo docker run -it --rm --privileged  -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform}  stage/{mini-complete-linux-platform}/release/main 
-
 ```
 
 ## Build Env (docker)
