@@ -1,6 +1,8 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 
+int fact(int n);
+
 int fact(int n) {
     return n <= 1 ? n : fact(n - 1) * n;
 }
