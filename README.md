@@ -67,29 +67,6 @@ If you work on the windows or mac, and you want to cross platform , you don't wa
 - Clang
 - MSVC
 
-**GCC / Clang warning**
-
-```
-
--Wall
--Wextra 
--Wshadow 
--Wnon-virtual-dtor 
--Wold-style-cast
--Wcast-align
--Wunused
--Woverloaded-virtual
--Wpedantic
--Wconversion
--Wsign-conversion
--Wlogical-op 
--Wuseless-cast
--Wdouble-promotion
--Wformat=2
--Weffc++
--pedantic
-```
-
 ## Build Tool(Cmake)
 
 Support cross-platform, you can easy use it for linux, android, window.
