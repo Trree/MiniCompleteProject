@@ -14,7 +14,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-    add_compiler_flags(-Wall)
+    #add_compiler_flags(-Wall)
     add_compiler_flags(-Wextra)
     add_compiler_flags(-fdiagnostics-show-option)
     add_compiler_flags(-Wconversion)
