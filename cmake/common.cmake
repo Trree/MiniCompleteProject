@@ -83,7 +83,7 @@ if(MSVC)
     add_compiler_flags(/std:c++latest) # for post c++14 updates in MSVC
     add_compiler_flags(/permissive-) # force standard conformance - this is the better flag than /Za
     add_compiler_flags(/WX)
-    add_compiler_flags(/Wall) # turns on warnings from levels 1 through 4 which are off by default - https://msdn.microsoft.com/en-us/library/23k5d385.aspx
+    #add_compiler_flags(/Wall) # turns on warnings from levels 1 through 4 which are off by default - https://msdn.microsoft.com/en-us/library/23k5d385.aspx
     
     add_compiler_flags(
         /wd4514 # unreferenced inline function has been removed

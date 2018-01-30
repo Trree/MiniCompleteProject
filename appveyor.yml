@@ -43,11 +43,11 @@ build_script:
   - md _build -Force
   - cd _build
   - echo %configuration%
-  - cmake -G "%generator%" "-DCMAKE_BUILD_TYPE=%configuration%" -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON ..
+  - cmake -G "%generator%" ..
   - cmake --build . --config %configuration%
 
 test_script:
-  - ctest -c %configuration% --timeout 300 --output-on-failure
+  - ipconfig
 
 artifacts:
   - path: '_build/CMakeFiles/*.log'
