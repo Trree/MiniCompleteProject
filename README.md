@@ -3,6 +3,7 @@
 A minimum complete project, support docker, ci, unittest, clang-format, clang-tidy.
 
 [![Build Status](https://travis-ci.org/Trree/MiniCompleteProject.svg?branch=master)](https://travis-ci.org/Trree/MiniCompleteProject)
+[![Build status](https://ci.appveyor.com/api/projects/status/o5o914eppl7boy2k/branch/master?svg=true)](https://ci.appveyor.com/project/Trree/minicompleteproject/branch/master)
 
 [中文说明](doc/description.md)
 

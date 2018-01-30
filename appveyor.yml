@@ -43,14 +43,8 @@ build_script:
   - md _build -Force
   - cd _build
   - echo %configuration%
-  - cmake -G "%generator%" ..
+  - cmake -G "%generator%" "-DCMAKE_BUILD_TYPE=%configuration%" ..
   - cmake --build . --config %configuration%
 
 test_script:
-  - ipconfig
-
-artifacts:
-  - path: '_build/CMakeFiles/*.log'
-    name: logs
-  - path: '_build/Testing/**/*.xml'
-    name: test_results
+  - ctest -c %configuration% --output-on-failure
