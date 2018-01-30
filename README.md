@@ -40,10 +40,12 @@ This project support multiple compliers and multiple platform, and support clang
 
 If you want to use docker, you have to build docker image firstly.
 In the docker directory, we provide two dockerfile,  it is ubuntu-trusty and alpine respectively.
+
 > cd docker/{linux-platform}/
 > sudo docker build -t {mini-complete-linux-platform} .
 
 you also can build  and run it like this:
+
 > sudo docker run -it -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform} ./build.py --docker-name {mini-complete-linux-platform}
 > sudo docker run -it --rm --privileged  -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform}  stage/{mini-complete-linux-platform}/release/main 
 
@@ -96,12 +98,15 @@ You can integrate clang-tidy and clang-format easily in a CMake-based build-syst
 
 ## unittest
 
-This project use doctest, it just give a simple example. You should choose to better unit test tool base on your need.
+This project use [doctest](https://github.com/onqtam/doctest), it just give a simple example. 
+
+You should choose to better unit test tool base on your need.
 
 ## CI (travis ci)
 
 [Travis CI](http://travis-ci.org/)
 
-This project provode a exmple [.travis.yml](.travis.yml). It support gcc/clang.
-You have to pass clang-tidy, build , unittest, test. It so sucess.
-It can avoid Primary mistake.
+This project provode a exmple [.travis.yml](.travis.yml). 
+
+It supports gcc/clang. You have to pass all the tests(clang-tidy, build, unittest, test) to be successful.
+It can avoid primary mistake.
