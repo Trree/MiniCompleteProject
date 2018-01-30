@@ -9,6 +9,7 @@ option(MiniComplete_ENABLE_TESTING "Enable testing of the library." ON)
 
 include(cmake/clang-cxx-dev-tools.cmake)
 include(cmake/common.cmake)
+include(cmake/memory-check.cmake)
 
 #ADD_DEFINITIONS(-std=c++11 -g3 -W -Wall -pedantic -D_GNU_SOURCE)
 #ADD_DEFINITIONS(-std=c99 -g -W)
@@ -19,7 +20,8 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 if (MiniComplete_ENABLE_TESTING)
   enable_testing()
-  add_test(NAME main COMMAND main)
+  add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+  include(cmake/memory-check.cmake)
   add_subdirectory(test)
 endif()
 

@@ -4,7 +4,6 @@ macro(add_compiler_flags)
     endforeach()
 endmacro()
 
-
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compiler_flags(-Werror)
     add_compiler_flags(-pedantic)
@@ -83,6 +82,7 @@ if(MSVC)
     add_compiler_flags(/std:c++latest) # for post c++14 updates in MSVC
     add_compiler_flags(/permissive-) # force standard conformance - this is the better flag than /Za
     add_compiler_flags(/WX)
+    add_compiler_flags(/W4)
     #add_compiler_flags(/Wall) # turns on warnings from levels 1 through 4 which are off by default - https://msdn.microsoft.com/en-us/library/23k5d385.aspx
     
     add_compiler_flags(
@@ -101,14 +101,5 @@ if(MSVC)
         #/wd5026 # move constructor was implicitly defined as deleted
         #/wd4623 # default constructor was implicitly defined as deleted
     )
-endif()
-
-# add a custom target that assembles the single header when any of the parts are touched
-
-set(doctest_include_folder "${CURRENT_LIST_DIR_CACHED}/../../doctest/")
-set(doctest_parts_folder "${CURRENT_LIST_DIR_CACHED}/../../doctest/parts/")
-if(WIN32)
-    STRING(REGEX REPLACE "/" "\\\\" doctest_include_folder ${doctest_include_folder})
-    STRING(REGEX REPLACE "/" "\\\\" doctest_parts_folder ${doctest_parts_folder})
 endif()
 
