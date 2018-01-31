@@ -4,35 +4,23 @@ SET(CMAKE_C_COMPILER "g++")
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
-# configure a header file to pass some of the CMake settings
-# to the source code
-#configure_file (
-#"${PROJECT_SOURCE_DIR}/TutorialConfig.h.in"
-#"${PROJECT_BINARY_DIR}/share/tcp_server.h"
-#
-#)
-add_subdirectory(test)
 
-#set(OPENSSL_ROOT_DIR /usr/local/ssl)
-#find_package(OpenSSL 1.0 REQUIRED)
-#message(STATUS "OpenSSL include directory: " ${OPENSSL_INCLUDE_DIR})
-#message(STATUS "OpenSSL library: " ${OPENSSL_LIBRARIES})
-#include_directories(${OPENSSL_INCLUDE_DIR})
+option(MiniComplete_ENABLE_TESTING "Enable testing of the library." ON)
 
 include(cmake/clang-cxx-dev-tools.cmake)
-include(cmake/gcc-weverything.cmake)
+include(cmake/common.cmake)
 
-# add the binary tree to the search path for include files
-# so that we will find TutorialConfig.h
-
-# -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
-#
-ADD_DEFINITIONS(-std=c++11 -g3 -W -Wall -pedantic -D_GNU_SOURCE)
+#ADD_DEFINITIONS(-std=c++11 -g3 -W -Wall -pedantic -D_GNU_SOURCE)
 #ADD_DEFINITIONS(-std=c99 -g -W)
 
 # add the executable
 add_executable(${PROJECT_NAME} main.cpp)
 #target_link_libraries(${PROJECT_NAME} ${OPENSSL_LIBRARIES})
 
-
+if (MiniComplete_ENABLE_TESTING)
+  enable_testing()
+  add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+  include(cmake/memory-check.cmake)
+  add_subdirectory(test)
+endif()
 
