@@ -1,6 +1,8 @@
 # Minimum Complete Project
 
-A minimum complete project, support docker, ci, unittest, clang-format, clang-tidy.
+A minimum complete project, support docker, ci, unittest, clang-format, clang-tidy, valgrind.
+
+The goal of this project is to provide a platform for developing and automating real-world scenarios.
 
 [![Build Status](https://travis-ci.org/Trree/MiniCompleteProject.svg?branch=master)](https://travis-ci.org/Trree/MiniCompleteProject)
 [![Build status](https://ci.appveyor.com/api/projects/status/o5o914eppl7boy2k/branch/master?svg=true)](https://ci.appveyor.com/project/Trree/minicompleteproject/branch/master)
@@ -71,12 +73,28 @@ If you work on the windows or mac, and you want to cross platform , you don't wa
 ## Build Tool(Cmake)
 
 Support cross-platform, you can easy use it for linux, android, window.
+More importantly, it supports clang-format, clang-tidy, valgrind and ctest.
+
+```
+make clang-format
+make clang-tidy
+make valgrind 
+ctest --output-on-failure
+```
 
 ### Static Analyzers and Indent
 
 You can integrate clang-tidy and clang-format easily in a CMake-based build-system.
 
 [clang-cxx-dev-tools.cmake](cmake/clang-cxx-dev-tools.cmake)
+
+## Memory Check
+
+If you install valgrind , you can use "make valgrind" test memory leak.
+
+## Ctest 
+
+Cmake support ctest, you can add\_test in the CMakeList.txt.
 
 ## unittest
 
@@ -86,9 +104,15 @@ You should choose to better unit test tool base on your need.
 
 ## CI (travis ci)
 
-[Travis CI](http://travis-ci.org/)
-
+[Travis CI](https://travis-ci.org/)
 This project provode a exmple [.travis.yml](.travis.yml). 
 
-It supports gcc/clang. You have to pass all the tests(clang-tidy, build, unittest, test) to be successful.
-It can avoid primary mistake.
+[appveyor](https://ci.appveyor.com)
+This project provode a exmple [appveyor.yml](appveyor.yml). 
+
+It supports gcc/clang and MSVC. You have to pass all the tests(clang-tidy, build, unittest, test) to be successful.
+
+
+## How to start you projcet
+
+You can test this project first. Then fork this project, replacing your file with the main.cpp file. Appropriately modify the CMakeList.txt file on it.
