@@ -19,9 +19,6 @@ if(CLANG_FORMAT)
   )
 endif()
 
-
-
-
 # Adding clang-tidy target if executable is found
 find_program(CLANG_TIDY "clang-tidy")
 if(CLANG_TIDY)

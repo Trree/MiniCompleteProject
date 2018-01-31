@@ -10,12 +10,15 @@ function(set_memcheck_test_properties name)
   set_tests_properties(memcheck_${name} ${ARGN})
 endfunction(set_memcheck_test_properties)
 
-message(STATUS "CMAKE_MEMORYCHECK_COMMAND: ${CMAKE_MEMORYCHECK_COMMAND}")
-message(STATUS "CMAKE_MEMORYCHECK_COMMAND_OPTIONS: ${CMAKE_MEMORYCHECK_COMMAND_OPTIONS}")
+
 # valgrind --tool=memcheck --leak-check=yes ./main
 find_program( MEMORYCHECK_COMMAND "valgrind" )
 message(STATUS "MEMORYCHECK_COMMAND: ${MEMORYCHECK_COMMAND}")
 if(MEMORYCHECK_COMMAND)
   set(CMAKE_MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
   add_memcheck_test("valgrind" ${PROJECT_NAME})
+  add_custom_target(
+    valgrind 
+    COMMAND valgrind --trace-children=yes --leak-check=full ./${PROJECT_NAME} ${ARGN}
+  )
 endif()
