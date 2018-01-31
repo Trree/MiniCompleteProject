@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
       wget  \
       make  \
       python3 \
+      valgrind \
  \
  && wget -c --no-check-certificate -O cmake.tar.gz https://cmake.org/files/v3.10/cmake-3.10.0.tar.gz \
  && tar xvf cmake.tar.gz  \

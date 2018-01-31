@@ -22,6 +22,7 @@ The goal of this project is to provide a platform for developing and automating 
         - [Static Analyzers and Indent](#static-analyzers-and-indent)
     - [unittest](#unittest)
     - [CI (travis ci)](#ci-travis-ci)
+    - [How to start your projcet](#how-to-start-your-project)
 
 <!-- /TOC -->
 
@@ -41,7 +42,10 @@ This project support multiple compliers and multiple platform, and support clang
 
 > python build.py --docker-name {dockername}
 
+File will be generated in stage directory.
+
 If you want to use docker, you have to build docker image firstly.
+
 In the docker directory, we provide two dockerfile,  it is ubuntu-trusty and alpine respectively.
 
 ```
@@ -52,8 +56,8 @@ sudo docker build -t {mini-complete-linux-platform} .
 you also can build  and run it like this:
 
 ```
-sudo docker run -it -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform} ./build.py --docker-name {mini-complete-linux-platform}
-sudo docker run -it --rm --privileged  -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform}  stage/{mini-complete-linux-platform}/release/main 
+python3 build.py --docker-name {mini-complete-linux-platform}
+sudo docker run -it --rm -v "$PWD":"$PWD" -w "$PWD" {mini-complete-linux-platform}  stage/{mini-complete-linux-platform}/release/main 
 ```
 
 ## Build Env (docker)
@@ -113,6 +117,6 @@ This project provode a exmple [appveyor.yml](appveyor.yml).
 It supports gcc/clang and MSVC. You have to pass all the tests(clang-tidy, build, unittest, test) to be successful.
 
 
-## How to start you projcet
+## How to start your projcet
 
 You can test this project first. Then fork this project, replacing your file with the main.cpp file. Appropriately modify the CMakeList.txt file on it.

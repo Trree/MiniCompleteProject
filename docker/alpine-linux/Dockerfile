@@ -9,10 +9,9 @@ ENV LANG C.UTF-8
 
 # runtime dependencies
 RUN apk add --no-cache \
+      make  \
       gcc \
       g++ \
       clang \
       cmake \
-      wget  \
-      make  \
       python3 \
